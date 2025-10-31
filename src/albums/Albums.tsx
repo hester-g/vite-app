@@ -8,11 +8,13 @@ type AlbumsProps = {
 const Albums = ({ albums }: AlbumsProps) => {
   if (albums.length > 0) {
     return (
-      <>
+      <ul>
         {albums.map((album) => (
-          <Album album={album} key={album.id}></Album>
+          <li key={album.id}>
+            <Album album={album}></Album>
+          </li>
         ))}
-      </>
+      </ul>
     )
   }
 
