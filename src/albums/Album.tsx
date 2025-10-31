@@ -5,7 +5,7 @@ type AlbumProps = {
 }
 
 const Album = ({ album }: AlbumProps) => {
-  return <div className={'p-1'}>{album.name}</div>
+  return <div className={'p-1.5'}>{album.name}</div>
 }
 
 export default Album
