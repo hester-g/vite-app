@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from 'react-router'
 
 import './App.css'
+import ProcessLogin from './components/process-login.tsx'
 import Home from './pages/home.tsx'
 import MySpotify from './pages/my-spotify.tsx'
 import NewAlbums from './pages/new-albums.tsx'
@@ -20,7 +21,7 @@ function App() {
         <Route index element={<Home />} />
 
         <Route path='callback'>
-          <Route index element={<MySpotify />} />
+          <Route index element={<ProcessLogin />} />
         </Route>
         {/*<Route path='about' element={<About />} />*/}
 

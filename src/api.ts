@@ -56,22 +56,24 @@ export const loginUser = async () => {
     new URLSearchParams(querystring).toString()
 }
 
-export const getTop = async (type: string, timeframe: string, code: string) => {
-  const accessToken = (
-    await requestToken({
-      postData: {
-        grant_type: 'authorization_code',
-        code: code,
-        redirect_uri: import.meta.env.VITE_REDIRECT_URI,
-      },
-      authorizationHeader: btoa(
-        import.meta.env.VITE_CLIENT_ID +
-          ':' +
-          import.meta.env.VITE_CLIENT_SECRET,
-      ),
-    })
-  ).data.access_token
+export const getSpotifyAccessToken = async (code: string) => {
+  return requestToken({
+    postData: {
+      grant_type: 'authorization_code',
+      code: code,
+      redirect_uri: import.meta.env.VITE_REDIRECT_URI,
+    },
+    authorizationHeader: btoa(
+      import.meta.env.VITE_CLIENT_ID + ':' + import.meta.env.VITE_CLIENT_SECRET,
+    ),
+  }).then((response) => response.data.access_token)
+}
 
+export const getTop = async (
+  type: string,
+  timeframe: string,
+  accessToken: string,
+) => {
   return axios
     .get(
       'https://api.spotify.com/v1/me/top/' +
