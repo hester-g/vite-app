@@ -1,31 +1,12 @@
 import axios, { AxiosHeaders } from 'axios'
 import cryptoRandomString from 'crypto-random-string'
 
+import type { TokenRequestDataType } from './types.ts'
+
 const TOKEN_URL = 'https://accounts.spotify.com/api/token'
 const ALBUM_RELEASES_URL = 'https://api.spotify.com/v1/browse/new-releases'
 
-type postData =
-  | {
-      grant_type: 'client_credentials'
-      client_id: string
-      client_secret: string
-    }
-  | {
-      grant_type: 'authorization_code'
-      code: string
-      redirect_uri: string
-    }
-
-type tokenRequestData =
-  | {
-      postData: Extract<postData, { grant_type: 'client_credentials' }>
-    }
-  | {
-      postData: Extract<postData, { grant_type: 'authorization_code' }>
-      authorizationHeader: string
-    }
-
-const requestToken = (tokenRequestData: tokenRequestData) => {
+const requestToken = (tokenRequestData: TokenRequestDataType) => {
   let headers = new AxiosHeaders()
   headers.set('Content-Type', 'application/x-www-form-urlencoded')
 

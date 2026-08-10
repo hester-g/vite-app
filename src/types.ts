@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react'
 
 export type NonEmptyArray<T> = [T, ...T[]]
-export const isNonEmptyArray = <T>(arr: T[]): arr is NonEmptyArray<T> => arr.length > 0
+export const isNonEmptyArray = <T>(arr: T[]): arr is NonEmptyArray<T> =>
+  arr.length > 0
 
 export type ContainerType = { children?: ReactNode }
 
@@ -50,3 +51,20 @@ export type AlbumType = SpotifyEntity & {
   available_markets: string[]
   total_tracks: number
 }
+
+export type TokenRequestDataType =
+  | {
+      postData: {
+        grant_type: 'client_credentials'
+        client_id: string
+        client_secret: string
+      }
+    }
+  | {
+      postData: {
+        grant_type: 'authorization_code'
+        code: string
+        redirect_uri: string
+      }
+      authorizationHeader: string
+    }
