@@ -1,5 +1,5 @@
+import type { AlbumType, NonEmptyArray } from '../../types.ts'
 import Album from './album/Album.tsx'
-import type { AlbumType, NonEmptyArray } from '../types.ts'
 
 type AlbumsProps = {
   albums: NonEmptyArray<AlbumType>
