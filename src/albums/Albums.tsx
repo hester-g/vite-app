@@ -1,4 +1,4 @@
-import Album from './Album.tsx'
+import Album from './album/Album.tsx'
 import type { AlbumType } from '../types.ts'
 
 type AlbumsProps = {
