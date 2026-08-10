@@ -67,7 +67,7 @@ export const loginUser = async () => {
     scope: scopes,
     redirect_uri: import.meta.env.VITE_REDIRECT_URI,
     state: state,
-    show_dialog: true,
+    show_dialog: 'true', //TODO remove
   }
 
   window.location.href =
