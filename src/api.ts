@@ -15,12 +15,6 @@ const requestToken = () => {
   })
 }
 
-/*
-curl --request GET \
---url https://api.spotify.com/v1/browse/new-releases \
---header 'Authorization: Bearer 1POdFZRZbvb...qqillRxMr2z'
- */
-
 export const getNewAlbums = async () => {
   const accessToken = (await requestToken()).data.access_token
 

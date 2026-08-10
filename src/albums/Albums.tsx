@@ -1,24 +1,20 @@
 import Album from './album/Album.tsx'
-import type { AlbumType } from '../types.ts'
+import type { AlbumType, NonEmptyArray } from '../types.ts'
 
 type AlbumsProps = {
-  albums: AlbumType[]
+  albums: NonEmptyArray<AlbumType>
 }
 
 const Albums = ({ albums }: AlbumsProps) => {
-  if (albums.length > 0) {
-    return (
-      <ul>
-        {albums.map((album) => (
-          <li key={album.id}>
-            <Album album={album}></Album>
-          </li>
-        ))}
-      </ul>
-    )
-  }
-
-  return <>Pls</>
+  return (
+    <ul>
+      {albums.map((album) => (
+        <li key={album.id}>
+          <Album album={album}></Album>
+        </li>
+      ))}
+    </ul>
+  )
 }
 
 export default Albums

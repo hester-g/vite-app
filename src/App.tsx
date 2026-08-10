@@ -2,9 +2,10 @@ import './App.css'
 import { useEffect, useState } from 'react'
 import { getNewAlbums } from './api.ts'
 import Albums from './albums/Albums.tsx'
+import  { type AlbumType, isNonEmptyArray } from './types.ts'
 
 function App() {
-  const [albums, setAlbums] = useState([])
+  const [albums, setAlbums] = useState<AlbumType[]>([])
 
   useEffect(() => {
     getNewAlbums()
@@ -16,7 +17,11 @@ function App() {
       })
   }, [])
 
-  return <Albums albums={albums} />
+  if (isNonEmptyArray(albums)) {
+    return <Albums albums={albums} />
+  } else {
+    return <p>Loading...</p>
+  }
 }
 
 export default App
