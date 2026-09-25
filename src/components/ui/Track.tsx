@@ -1,13 +1,6 @@
-import {
-  Container,
-  ImageContainer,
-  TextContainer,
-} from '@components/ui/containers.tsx'
-import type { ImageType, TrackType } from '@t'
-
-type TrackProps = {
-  track: TrackType
-}
+import { Container, ImageContainer, TextContainer } from '@shared'
+import type { ImageType } from '@t'
+import type { TrackProps } from '@t/props.ts'
 
 const Track = ({ track }: TrackProps) => {
   const image64 = track.album.images.find(

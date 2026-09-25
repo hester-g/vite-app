@@ -1,9 +1,6 @@
 import { Container, ImageContainer, TextContainer } from '@shared'
-import type { AlbumType, ImageType } from '@t'
-
-type AlbumProps = {
-  album: AlbumType
-}
+import type { ImageType } from '@t'
+import type { AlbumProps } from '@t/props.ts'
 
 const Album = ({ album }: AlbumProps) => {
   const image64 = album.images.find((img) => img.height === 64) as ImageType

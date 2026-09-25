@@ -1,12 +1,9 @@
-import type { AlbumType, NonEmptyArray, TrackType } from '@t'
+import type { AlbumType, TrackType } from '@t'
 import { isAlbumType, isTrackType } from '@t/guards.ts'
+import type { ListProps } from '@t/props.ts'
 
 import Album from './Album.tsx'
 import Track from './Track.tsx'
-
-interface ListProps {
-  items: NonEmptyArray<AlbumType | TrackType>
-}
 
 const List = ({ items }: ListProps) => {
   const Component = ({ item }: { item: AlbumType | TrackType }) => {
