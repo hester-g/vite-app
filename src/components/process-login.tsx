@@ -18,7 +18,7 @@ const ProcessLogin = () => {
     }
   }, [searchParams, loginToken, setLoginToken])
 
-  // goto my Spotify page
+  // TODO goto my Spotify page
 
   return <></>
 }
