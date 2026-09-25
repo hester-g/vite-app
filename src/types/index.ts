@@ -1,8 +1,6 @@
-import type { Dispatch, ReactNode, SetStateAction } from 'react'
+import type { ReactNode } from 'react'
 
 export type NonEmptyArray<T> = [T, ...T[]]
-export const isNonEmptyArray = <T>(arr: T[]): arr is NonEmptyArray<T> =>
-  arr.length > 0
 
 export type ContainerType = { children?: ReactNode }
 
@@ -79,16 +77,5 @@ export type TokenRequestDataType =
       }
       authorizationHeader: string
     }
-
-export type ProcessLoginProps = {
-  loginToken: string | undefined
-  setLoginToken: Dispatch<SetStateAction<string | undefined>>
-}
-
-export const isAlbumType = (item: AlbumType | TrackType): item is AlbumType =>
-  item.type === 'album'
-
-export const isTrackType = (item: AlbumType | TrackType): item is TrackType =>
-  item.type === 'track'
 
 export type LoginToken = string | undefined

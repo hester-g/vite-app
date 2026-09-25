@@ -13,7 +13,6 @@ const ProcessLogin = () => {
 
     if (code && !loginToken) {
       getSpotifyAccessToken(code).then((token) => {
-        console.log(token)
         setLoginToken(token)
       })
     }

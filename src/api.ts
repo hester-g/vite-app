@@ -1,7 +1,6 @@
+import type { TokenRequestDataType } from '@t'
 import axios, { AxiosHeaders } from 'axios'
 import cryptoRandomString from 'crypto-random-string'
-
-import type { TokenRequestDataType } from './types.ts'
 
 const TOKEN_URL = 'https://accounts.spotify.com/api/token'
 const ALBUM_RELEASES_URL = 'https://api.spotify.com/v1/browse/new-releases'

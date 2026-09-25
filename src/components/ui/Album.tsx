@@ -1,5 +1,5 @@
-import type { AlbumType, ImageType } from '../../types.ts'
-import { Container, ImageContainer, TextContainer } from '../container.tsx'
+import { Container, ImageContainer, TextContainer } from '@shared'
+import type { AlbumType, ImageType } from '@t'
 
 type AlbumProps = {
   album: AlbumType

@@ -1,4 +1,4 @@
-import type { ContainerType } from '../../types.ts'
+import type { ContainerType } from '@t'
 
 export const Container = ({ children }: ContainerType) => (
   <div className={'flex justify-baseline items-center min-w-3xl py-4'}>

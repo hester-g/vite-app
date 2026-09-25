@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
+import { Container } from '@shared'
+import { type TrackType } from '@t'
+import { isNonEmptyArray } from '@t/guards'
 
 import { getTop, loginUser } from '../api.ts'
 import List from '../components/ui/List.tsx'
-import { Container } from '../components/ui/container.tsx'
 import { useLogin } from '../components/use-login.tsx'
-import { type TrackType, isNonEmptyArray } from '../types.ts'
 
 const MySpotify = () => {
   const [tracks, setTracks] = useState<TrackType[]>([])
@@ -14,7 +15,6 @@ const MySpotify = () => {
     if (loginToken) {
       getTop('tracks', 'short_term', loginToken)
         .then((response) => {
-          console.log(response.data)
           setTracks(response.data.items)
         })
         .catch((err) => {

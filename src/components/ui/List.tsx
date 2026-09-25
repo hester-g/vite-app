@@ -1,10 +1,6 @@
-import {
-  type AlbumType,
-  type NonEmptyArray,
-  type TrackType,
-  isAlbumType,
-  isTrackType,
-} from '../../types.ts'
+import type { AlbumType, NonEmptyArray, TrackType } from '@t'
+import { isAlbumType, isTrackType } from '@t/guards.ts'
+
 import Album from './Album.tsx'
 import Track from './Track.tsx'
 

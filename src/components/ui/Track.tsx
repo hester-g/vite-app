@@ -1,5 +1,9 @@
-import type { ImageType, TrackType } from '../../types.ts'
-import { Container, ImageContainer, TextContainer } from '../container.tsx'
+import {
+  Container,
+  ImageContainer,
+  TextContainer,
+} from '@components/ui/containers.tsx'
+import type { ImageType, TrackType } from '@t'
 
 type TrackProps = {
   track: TrackType

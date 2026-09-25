@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
+import { Container } from '@shared'
+import { type AlbumType } from '@t'
+import { isNonEmptyArray } from '@t/guards.ts'
 
 import { getNewAlbums } from '../api.ts'
 import List from '../components/ui/List.tsx'
-import { Container } from '../components/ui/container.tsx'
-import { type AlbumType, isNonEmptyArray } from '../types.ts'
 
 const NewAlbums = () => {
   const [albums, setAlbums] = useState<AlbumType[]>([])
