@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type { Dispatch, ReactNode, SetStateAction } from 'react'
 
 export type NonEmptyArray<T> = [T, ...T[]]
 export const isNonEmptyArray = <T>(arr: T[]): arr is NonEmptyArray<T> =>
@@ -9,7 +9,7 @@ export type ContainerType = { children?: ReactNode }
 type SpotifyEntity = {
   id: string
   name: string
-  type: 'artist' | 'album'
+  type: 'artist' | 'album' | 'track'
   uri: string
   href: string
   external_urls: { spotify: string }
@@ -52,6 +52,15 @@ export type AlbumType = SpotifyEntity & {
   total_tracks: number
 }
 
+export type TrackType = SpotifyEntity & {
+  type: 'track'
+  artists: Artist[]
+  album: AlbumType
+  popularity: number // 1-100?
+  explicit: boolean
+  track_number: number
+}
+
 export type TokenRequestDataType =
   | {
       postData: {
@@ -68,3 +77,8 @@ export type TokenRequestDataType =
       }
       authorizationHeader: string
     }
+
+export type ProcessLoginProps = {
+  loginToken: string | undefined
+  setLoginToken: Dispatch<SetStateAction<string | undefined>>
+}

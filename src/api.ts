@@ -70,22 +70,17 @@ export const getSpotifyAccessToken = async (code: string) => {
 }
 
 export const getTop = async (
-  type: string,
-  timeframe: string,
+  type: 'artists' | 'tracks',
+  timeframe: 'short_term' | 'medium_term' | 'long_term',
   accessToken: string,
+  limit: number = 50,
 ) => {
-  return axios
-    .get(
-      'https://api.spotify.com/v1/me/top/' +
-        type +
-        '?time_range=' +
-        timeframe +
-        '&limit=50',
-      {
-        headers: {
-          Authorization: 'Bearer ' + accessToken,
-        },
+  return axios.get(
+    `https://api.spotify.com/v1/me/top/${type}?time_range=${timeframe}&limit=${limit}`,
+    {
+      headers: {
+        Authorization: 'Bearer ' + accessToken,
       },
-    )
-    .catch((response) => console.error(response))
+    },
+  )
 }
