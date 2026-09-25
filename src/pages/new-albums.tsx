@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
 import { getNewAlbums } from '../api.ts'
-import Albums from '../components/albums/Albums.tsx'
+import { Container } from '../components/container.tsx'
+import List from '../components/ui/List.tsx'
 import { type AlbumType, isNonEmptyArray } from '../types.ts'
-import { Container } from '../components/shared-components.tsx'
 
 const NewAlbums = () => {
   const [albums, setAlbums] = useState<AlbumType[]>([])
@@ -18,9 +18,11 @@ const NewAlbums = () => {
       })
   }, [])
 
-  return <Container>
-    {isNonEmptyArray(albums) ? <Albums albums={albums} /> : <p>Loading...</p>}
-  </Container>
+  return (
+    <Container>
+      {isNonEmptyArray(albums) ? <List items={albums} /> : <p>Loading...</p>}
+    </Container>
+  )
 }
 
 export default NewAlbums

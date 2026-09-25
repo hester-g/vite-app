@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useSearchParams } from 'react-router'
 
 import { getSpotifyAccessToken } from '../api.ts'
-import { useLogin } from './login-context.tsx'
+import { useLogin } from './use-login.tsx'
 
 const ProcessLogin = () => {
   let [searchParams] = useSearchParams()
@@ -17,7 +17,7 @@ const ProcessLogin = () => {
         setLoginToken(token)
       })
     }
-  }, [searchParams, loginToken])
+  }, [searchParams, loginToken, setLoginToken])
 
   return <></>
 }

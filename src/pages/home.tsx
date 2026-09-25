@@ -1,4 +1,4 @@
-import { Container } from '../components/shared-components.tsx'
+import { Container } from '../components/container.tsx'
 
 const Home = () => {
   return <Container>Welcome, welcome.</Container>

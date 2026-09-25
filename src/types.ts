@@ -6,10 +6,12 @@ export const isNonEmptyArray = <T>(arr: T[]): arr is NonEmptyArray<T> =>
 
 export type ContainerType = { children?: ReactNode }
 
+type SpotifyEntityType = 'artist' | 'album' | 'track'
+
 type SpotifyEntity = {
   id: string
   name: string
-  type: 'artist' | 'album' | 'track'
+  type: SpotifyEntityType
   uri: string
   href: string
   external_urls: { spotify: string }
@@ -82,3 +84,11 @@ export type ProcessLoginProps = {
   loginToken: string | undefined
   setLoginToken: Dispatch<SetStateAction<string | undefined>>
 }
+
+export const isAlbumType = (item: AlbumType | TrackType): item is AlbumType =>
+  item.type === 'album'
+
+export const isTrackType = (item: AlbumType | TrackType): item is TrackType =>
+  item.type === 'track'
+
+export type LoginToken = string | undefined

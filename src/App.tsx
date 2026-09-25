@@ -1,7 +1,7 @@
 import { Link, Route, Routes } from 'react-router'
 
 import './App.css'
-import { LoginProvider } from './components/login-context.tsx'
+import { LoginProvider } from './components/login-provider.tsx'
 import ProcessLogin from './components/process-login.tsx'
 import Home from './pages/home.tsx'
 import MySpotify from './pages/my-spotify.tsx'

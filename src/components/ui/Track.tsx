@@ -1,18 +1,18 @@
-import type { ContainerType, ImageType, TrackType } from '../../../types.ts'
-import { Container } from '../../shared-components.tsx'
+import type { ContainerType, ImageType, TrackType } from '../../types.ts'
+import { Container } from '../container.tsx'
 
 type TrackProps = {
   track: TrackType
 }
 
-const Track = ({ track }: TrackProps) => {
-  const ImageContainer = ({ children }: ContainerType) => (
-    <div className={'px-4 items-start'}>{children}</div>
-  )
-  const TextContainer = ({ children }: ContainerType) => (
-    <div className={'px-4'}>{children}</div>
-  )
+const ImageContainer = ({ children }: ContainerType) => (
+  <div className={'px-4 items-start'}>{children}</div>
+)
+const TextContainer = ({ children }: ContainerType) => (
+  <div className={'px-4'}>{children}</div>
+)
 
+const Track = ({ track }: TrackProps) => {
   const image64 = track.album.images.find(
     (img) => img.height === 64,
   ) as ImageType

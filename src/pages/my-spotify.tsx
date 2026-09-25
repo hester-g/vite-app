@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
 import { getTop, loginUser } from '../api.ts'
-import { useLogin } from '../components/login-context.tsx'
-import { Container } from '../components/shared-components.tsx'
-import Tracks from '../components/tracks/Tracks.tsx'
+import { Container } from '../components/container.tsx'
+import List from '../components/ui/List.tsx'
+import { useLogin } from '../components/use-login.tsx'
 import { type TrackType, isNonEmptyArray } from '../types.ts'
 
 const MySpotify = () => {
@@ -33,7 +33,7 @@ const MySpotify = () => {
       >
         Login
       </button>
-      {isNonEmptyArray(tracks) ? <Tracks tracks={tracks} /> : <p>Loading...</p>}
+      {isNonEmptyArray(tracks) ? <List items={tracks} /> : <p>Loading...</p>}
     </Container>
   )
 }
