@@ -1,21 +1,23 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useSearchParams } from 'react-router'
 
 import { getSpotifyAccessToken } from '../api.ts'
+import { useLogin } from './login-context.tsx'
 
 const ProcessLogin = () => {
-  const [accessToken, setAccessToken] = useState()
   let [searchParams] = useSearchParams()
+  const { loginToken, setLoginToken } = useLogin()
 
   useEffect(() => {
     const code = new URLSearchParams(searchParams).get('code')
 
-    if (code && !accessToken) {
+    if (code && !loginToken) {
       getSpotifyAccessToken(code).then((token) => {
-        setAccessToken(token)
+        console.log(token)
+        setLoginToken(token)
       })
     }
-  }, [searchParams, accessToken])
+  }, [searchParams, loginToken])
 
   return <></>
 }

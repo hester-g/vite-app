@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from 'react-router'
 
 import './App.css'
+import { LoginProvider } from './components/login-context.tsx'
 import ProcessLogin from './components/process-login.tsx'
 import Home from './pages/home.tsx'
 import MySpotify from './pages/my-spotify.tsx'
@@ -8,7 +9,7 @@ import NewAlbums from './pages/new-albums.tsx'
 
 function App() {
   return (
-    <>
+    <LoginProvider>
       <div
         className={'flex justify-evenly p-4 w-full bg-cyan-400 text-indigo-500'}
       >
@@ -37,7 +38,7 @@ function App() {
           <Route index element={<NewAlbums />} />
         </Route>
       </Routes>
-    </>
+    </LoginProvider>
   )
 }
 
