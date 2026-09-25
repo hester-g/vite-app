@@ -1,6 +1,5 @@
 import { type Dispatch, type SetStateAction, createContext } from 'react'
-
-import type { LoginToken } from '../types'
+import type { LoginToken } from '@t'
 
 export const LoginContext = createContext<
   | undefined
