@@ -28,7 +28,8 @@
     "paths": {
       "@t": ["src/types"],
       "@t/*": ["src/types/*"],
-      "@shared": ["src/components/shared"]
+      "@shared": ["src/components/shared"],
+      "@util": ["src/components/util"]
     }
   },
   "include": ["src", "node_modules/@types/node/buffer.d.ts"]

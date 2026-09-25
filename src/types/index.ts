@@ -1,8 +1,4 @@
-import type { ReactNode } from 'react'
-
 export type NonEmptyArray<T> = [T, ...T[]]
-
-export type ContainerType = { children?: ReactNode }
 
 type SpotifyEntityType = 'artist' | 'album' | 'track'
 

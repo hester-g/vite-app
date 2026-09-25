@@ -1,22 +1,17 @@
-import { Container, ImageContainer, TextContainer } from '@shared'
-import type { ImageType } from '@t'
+import { DisplayCard } from '@shared'
 import type { TrackProps } from '@t/props'
+import { getImage64 } from '@util'
 
 const Track = ({ track }: TrackProps) => {
-  const image64 = track.album.images.find(
-    (img) => img.height === 64,
-  ) as ImageType
+  const image64 = getImage64(track.album.images)
 
   return (
-    <Container>
-      <ImageContainer>
-        <img src={image64.url} alt={track.album.name + ' cover art'} />
-      </ImageContainer>
-      <TextContainer>
-        <p className={'text-white'}>{track.name}</p>
-        <p>{track.artists[0].name}</p>
-      </TextContainer>
-    </Container>
+    <DisplayCard
+      imageUrl={image64.url}
+      imageName={track.album.name + ' cover art'}
+      itemName={track.album.name}
+      artistNames={track.album.artists.map((artist) => artist.name)}
+    />
   )
 }
 

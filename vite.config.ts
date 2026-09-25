@@ -11,6 +11,7 @@ export default defineConfig({
     alias: {
       '@t': path.resolve(__dirname, 'src/types'),
       '@shared': path.resolve(__dirname, 'src/components/shared'),
+      '@util': path.resolve(__dirname, 'src/components/util'),
     },
   },
 })
