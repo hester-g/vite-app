@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 
-import { LoginContext } from './login-context.tsx'
+import { LoginContext } from './login-context'
 
 export const useLogin = () => {
   const context = useContext(LoginContext)

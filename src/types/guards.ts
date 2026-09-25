@@ -1,4 +1,4 @@
-import type { AlbumType, NonEmptyArray, TrackType } from './index.ts'
+import type { AlbumType, NonEmptyArray, TrackType } from './index'
 
 export const isNonEmptyArray = <T>(arr: T[]): arr is NonEmptyArray<T> =>
   arr.length > 0

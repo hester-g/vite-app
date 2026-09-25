@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useSearchParams } from 'react-router'
 
-import { getSpotifyAccessToken } from '../api.ts'
-import { useLogin } from './use-login.tsx'
+import { getSpotifyAccessToken } from '../api'
+import { useLogin } from './use-login'
 
 const ProcessLogin = () => {
   let [searchParams] = useSearchParams()

@@ -1,9 +1,9 @@
 import type { AlbumType, TrackType } from '@t'
-import { isAlbumType, isTrackType } from '@t/guards.ts'
-import type { ListProps } from '@t/props.ts'
+import { isAlbumType, isTrackType } from '@t/guards'
+import type { ListProps } from '@t/props'
 
-import Album from './Album.tsx'
-import Track from './Track.tsx'
+import Album from './Album'
+import Track from './Track'
 
 const List = ({ items }: ListProps) => {
   const Component = ({ item }: { item: AlbumType | TrackType }) => {

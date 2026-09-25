@@ -3,9 +3,9 @@ import { Container } from '@shared'
 import { type TrackType } from '@t'
 import { isNonEmptyArray } from '@t/guards'
 
-import { getTop, loginUser } from '../api.ts'
-import List from '../components/ui/List.tsx'
-import { useLogin } from '../components/use-login.tsx'
+import { getTop, loginUser } from '../api'
+import List from '../components/ui/List'
+import { useLogin } from '../components/use-login'
 
 const MySpotify = () => {
   const [tracks, setTracks] = useState<TrackType[]>([])
