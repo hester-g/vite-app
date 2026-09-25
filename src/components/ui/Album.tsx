@@ -1,16 +1,9 @@
-import type { AlbumType, ContainerType, ImageType } from '../../types.ts'
-import { Container } from '../container.tsx'
+import type { AlbumType, ImageType } from '../../types.ts'
+import { Container, ImageContainer, TextContainer } from '../container.tsx'
 
 type AlbumProps = {
   album: AlbumType
 }
-
-const ImageContainer = ({ children }: ContainerType) => (
-  <div className={'px-4 items-start'}>{children}</div>
-)
-const TextContainer = ({ children }: ContainerType) => (
-  <div className={'px-4'}>{children}</div>
-)
 
 const Album = ({ album }: AlbumProps) => {
   const image64 = album.images.find((img) => img.height === 64) as ImageType

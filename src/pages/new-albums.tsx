@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 
 import { getNewAlbums } from '../api.ts'
-import { Container } from '../components/container.tsx'
 import List from '../components/ui/List.tsx'
+import { Container } from '../components/ui/container.tsx'
 import { type AlbumType, isNonEmptyArray } from '../types.ts'
 
 const NewAlbums = () => {
