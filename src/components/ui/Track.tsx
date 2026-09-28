@@ -9,7 +9,7 @@ const Track = ({ track }: TrackProps) => {
     <DisplayCard
       imageUrl={image64.url}
       imageName={track.album.name + ' cover art'}
-      itemName={track.album.name}
+      itemName={track.name}
       artistNames={track.album.artists.map((artist) => artist.name)}
     />
   )
